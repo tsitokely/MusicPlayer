@@ -2,4 +2,6 @@
     <string name="app_name">MusicPlayer</string>
     <string name="play">Play</string>
     <string name="pause">Pause</string>
+    <string name="increase">Vol+</string>
+    <string name="decrease">Vol-</string>
 </resources>

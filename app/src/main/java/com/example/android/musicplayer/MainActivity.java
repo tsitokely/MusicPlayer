@@ -12,7 +12,10 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private Button mPlay;
     private Button mPause;
+    private Button mIncrease;
+    private Button mDecrease;
     private MediaPlayer mediaplayer;
+    private float volume = 0.5f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,22 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Pausing Sound",
                         Toast.LENGTH_SHORT).show();
                 mediaplayer.pause();
+
+            }
+        });
+        mIncrease = findViewById(R.id.increase_volume);
+        mIncrease.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                volume = volume + 0.1f;
+                mediaplayer.setVolume(volume, volume);
+
+            }
+        });
+        mDecrease = findViewById(R.id.decrease_volume);
+        mDecrease.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                volume = volume - 0.1f;
+                mediaplayer.setVolume(volume, volume);
 
             }
         });
