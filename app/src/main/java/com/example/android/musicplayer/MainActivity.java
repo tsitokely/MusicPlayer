@@ -30,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 mediaplayer.start();
 
+                mediaplayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+                    @Override
+                    public void onCompletion(MediaPlayer mediaPlayer) {
+                        Toast.makeText(MainActivity.this, "I'm done",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
         });
         mPause = findViewById(R.id.pause);
